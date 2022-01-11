@@ -1,0 +1,29 @@
+{
+	"dijkstra": {
+		"prefix": "dij",
+		"body": [
+		  "vector<ll> dis(N,1e18),par(N,-1);",
+		  "vector<pair<ll,ll>> g[N];",
+		  "void dij(int s=0)",
+		  "{",
+		  "    priority_queue<pair<ll,ll>,vector<pair<ll,ll>>,greater<pair<ll,ll>>> q;",
+		  "    q.push({0,s});",
+		  "    dis[s]=0;",
+		  "    while(q.size())",
+		  "    {",
+		  "        int u=q.top().ps,d=q.top().pf;",
+		  "        q.pop();",
+		  "        if(dis[u]!=d) continue;",
+		  "        for(auto v:g[u])",
+		  "        {",
+		  "            if(dis[v.pf]<=dis[u]+v.ps) continue;",
+		  "            dis[v.pf]=dis[u]+v.ps;",
+		  "            par[v.pf]=u;",
+		  "            q.push({dis[v.pf],v.pf});",
+		  "        }",
+		  "    }",
+		  "}"
+		],
+		"description": "dijkstra"
+	  }
+}

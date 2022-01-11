@@ -1,0 +1,34 @@
+{
+	"DSU": {
+		"prefix": "dsu",
+		"body": [
+		  "struct dsu",
+		  "{",
+		  "    vector<int> par,rk;",
+		  "    int connected;",
+		  "    void init(ll n)",
+		  "    {",
+		  "        par.resize(n);",
+		  "        rk.resize(n,1);",
+		  "        iota(all(par),0);",
+		  "        connected=n;",
+		  "    }",
+		  "    ll getp(ll x)",
+		  "    {",
+		  "        if(par[x]==x) return x;",
+		  "        return par[x]=getp(par[x]);",
+		  "    }",
+		  "    void unite(ll a,ll b)",
+		  "    {",
+		  "        a=getp(a),b=getp(b);",
+		  "        if(a==b) return;",
+		  "        connected--;",
+		  "        if(rk[a]>rk[b]) swap(a,b);",
+		  "        rk[b]+=rk[a];",
+		  "        par[a]=b;",
+		  "    }",
+		  "};"
+		],
+		"description": "DSU"
+	  }
+}

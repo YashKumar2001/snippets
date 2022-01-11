@@ -1,0 +1,23 @@
+{
+	"sieve": {
+		"prefix": "sieve",
+		"body": [
+		  "bool prime[N+1]; ",
+		  "vector<ll> pr;",
+		  "void sieve() ",
+		  "{ ",
+		  "fill(prime,prime+N,1);",
+		  "    for (ll p=2; p<N; p++) ",
+		  "    { ",
+		  "        if (prime[p] == true) ",
+		  "        { ",
+		  "            pr.pb(p);",
+		  "            for (ll i=p*p; i<N; i += p) ",
+		  "                prime[i] = false; ",
+		  "        } ",
+		  "    } ",
+		  "} "
+		],
+		"description": "sieve"
+	  }
+}

@@ -1,0 +1,22 @@
+{
+	"spf": {
+		"prefix": "spf",
+		"body": [
+		  "int spf[N+1];",
+		  "void sieve() ",
+		  "{ ",
+		  "    fill(spf,spf+N,0);",
+		  "    for (ll p=2; p<N; p++) ",
+		  "    { ",
+		  "        if (spf[p]==0) ",
+		  "        { ",
+		  "            for (ll i=p; i<N; i += p) ",
+		  "                if(spf[i]==0)",
+		  "                spf[i] = p; ",
+		  "        } ",
+		  "    } ",
+		  "}"
+		],
+		"description": "spf"
+	  }
+}

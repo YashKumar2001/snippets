@@ -1,0 +1,21 @@
+{
+	"lps": {
+		"prefix": "lps",
+		"body": [
+		  "vector<ll> LPS(string s) {",
+		  "    ll n = sz(s);",
+		  "    vector<ll> lps(n);",
+		  "    for (ll i = 1; i < n; i++) {",
+		  "        ll j = lps[i-1];",
+		  "        while (j > 0 && s[i] != s[j])",
+		  "            j = lps[j-1];",
+		  "        if (s[i] == s[j])",
+		  "            j++;",
+		  "        lps[i] = j;",
+		  "    }",
+		  "    return lps;",
+		  "}"
+		],
+		"description": "lps"
+	  }
+}
