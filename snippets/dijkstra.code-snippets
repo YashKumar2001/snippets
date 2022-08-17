@@ -11,7 +11,7 @@
 		  "    dis[s]=0;",
 		  "    while(q.size())",
 		  "    {",
-		  "        int u=q.top().ps,d=q.top().pf;",
+		  "        ll u=q.top().ps,d=q.top().pf;",
 		  "        q.pop();",
 		  "        if(dis[u]!=d) continue;",
 		  "        for(auto v:g[u])",
